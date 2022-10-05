@@ -5,10 +5,10 @@ export interface Props {
   text: string;
 }
 
-export default function Header(props: Props) {
+export default function Header({ text }: Props) {
   return (
     <View style={styles.header}>
-      <Text style={styles.headerText}>{props.text}</Text>
+      <Text style={styles.headerText}>{text}</Text>
     </View>
   );
 }
@@ -16,6 +16,7 @@ export default function Header(props: Props) {
 const styles = StyleSheet.create({
   header: {
     height: 200,
+    margin: 0,
     backgroundColor: "#1565c0",
     justifyContent: "center",
     alignItems: "center",

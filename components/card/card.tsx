@@ -1,12 +1,12 @@
 import { View, StyleSheet } from "react-native";
-import React, { PropsWithChildren } from "react";
+import React from "react";
 
-export interface Props {}
+export interface Props {
+  children?: JSX.Element;
+}
 
-export default function Card(props: PropsWithChildren<Props>) {
-  return (
-    <View style={[styles.cardStyle, styles.elevation]}>{props.children}</View>
-  );
+export default function Card({ children }: Props) {
+  return <View style={[styles.cardStyle, styles.elevation]}>{children}</View>;
 }
 
 const styles = StyleSheet.create({
@@ -14,6 +14,8 @@ const styles = StyleSheet.create({
     height: 150,
     marginLeft: 20,
     marginRight: 20,
+    justifyContent: "center",
+    alignItems: "center",
     backgroundColor: "white",
     borderRadius: 10,
   },
