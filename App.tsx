@@ -1,11 +1,15 @@
 import InitialPage from "./pages/initialPage";
-import { SafeAreaView, StatusBar } from "react-native";
+import Header from "./components/header/header";
+import { SafeAreaView, ScrollView, StatusBar } from "react-native";
 
 export default function App() {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <StatusBar />
-      <InitialPage />
+      <ScrollView>
+        <Header text="Controle financeiro" />
+        <InitialPage />
+      </ScrollView>
     </SafeAreaView>
   );
 }
