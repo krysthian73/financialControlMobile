@@ -1,4 +1,5 @@
 import { View, Text, StyleSheet } from "react-native";
+import { Colors, FontsSize } from "../../helpers/constants";
 import React from "react";
 
 export interface Props {
@@ -17,14 +18,14 @@ const styles = StyleSheet.create({
   header: {
     height: 200,
     margin: 0,
-    backgroundColor: "#1565c0",
+    backgroundColor: Colors.blue,
     justifyContent: "center",
     alignItems: "center",
   },
   headerText: {
-    color: "white",
+    color: Colors.white,
     fontWeight: "bold",
-    fontSize: 30,
+    fontSize: FontsSize.fontSize0,
     paddingBottom: 80,
   },
 });

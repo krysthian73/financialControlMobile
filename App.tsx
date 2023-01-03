@@ -4,9 +4,9 @@ import { SafeAreaView, ScrollView, StatusBar } from "react-native";
 
 export default function App() {
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <StatusBar />
+    <SafeAreaView>
       <ScrollView>
+        <StatusBar />
         <Header text="Controle financeiro" />
         <InitialPage />
       </ScrollView>

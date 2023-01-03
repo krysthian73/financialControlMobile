@@ -1,41 +1,37 @@
 import React from "react";
 import Card from "../../components/card/card";
-import { View, Text, SafeAreaView } from "react-native";
+import { Dimensions, View } from "react-native";
 
 export default function InitialPage() {
   return (
-    <SafeAreaView>
+    <View
+      style={{
+        flex: 1,
+        display: "flex",
+        backgroundColor: "transparent",
+        height: Dimensions.get("window").height,
+      }}
+    >
+      <View
+        style={{
+          backgroundColor: "transparent",
+          marginTop: -80,
+        }}
+      >
+        <Card header="+ Entradas do mês de Janeiro" />
+      </View>
       <View
         style={{
           flex: 1,
-          backgroundColor: "transparent",
+          justifyContent: "space-evenly",
         }}
       >
-        <View
-          style={{
-            backgroundColor: "transparent",
-            marginTop: -80,
-          }}
-        >
-          <Card header="+ Entradas do mês de Janeiro" />
-        </View>
-        <View
-          style={{
-            flex: 1,
-            justifyContent: "space-evenly",
-          }}
-        >
-          {/* <Card>
-            <Text>Despesas fixas</Text>
-          </Card>
-          <Card>
-            <Text>Gastos avulsos</Text>
-          </Card>
-          <Card>
-            <Text>Saldo restante</Text>
-          </Card> */}
-        </View>
+        <Card header="- Despesas Fixas" />
+
+        <Card header="- Gastos" />
+
+        <Card header="= Saldo restante" />
       </View>
-    </SafeAreaView>
+    </View>
   );
 }
