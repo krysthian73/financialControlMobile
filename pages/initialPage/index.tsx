@@ -18,7 +18,7 @@ export default function InitialPage() {
           marginTop: -80,
         }}
       >
-        <Card header="+ Entradas do mês de Janeiro" />
+        <Card header="+ Saldo disponível" value={0} />
       </View>
       <View
         style={{
@@ -26,11 +26,11 @@ export default function InitialPage() {
           justifyContent: "space-evenly",
         }}
       >
-        <Card header="- Despesas Fixas" />
+        <Card header="+ Entradas do mês de Janeiro" value={0} />
 
-        <Card header="- Gastos" />
+        <Card header="- Despesas Fixas" value={0} />
 
-        <Card header="= Saldo restante" />
+        <Card header="- Gastos" value={0} />
       </View>
     </View>
   );

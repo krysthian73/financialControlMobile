@@ -4,21 +4,21 @@ import React, { Fragment } from "react";
 
 type Props = {
   header: string;
+  value: number;
 };
 
-export default function Card({ header }: Props) {
+export default function Card({ header, value }: Props) {
   return (
     <View style={[styles.cardStyle, styles.elevation]}>
       <TouchableHighlight
         activeOpacity={0.6}
         underlayColor="#e3f2fd"
-        style={{ height: "100%", borderRadius: 10 }}
+        style={{ height: "100%", width: "100%", borderRadius: 10 }}
         onPress={(e) => alert("uepa")}
       >
         <Fragment>
           <View
             style={{
-              // backgroundColor: "blue",
               display: "flex",
               alignItems: "center",
               paddingVertical: 10,
@@ -29,11 +29,7 @@ export default function Card({ header }: Props) {
                 fontSize: FontsSize.fontSize1,
                 fontWeight: "600",
                 fontStyle: "italic",
-                color: header.includes("+")
-                  ? Colors.green
-                  : header.includes("=")
-                  ? Colors.blue
-                  : Colors.red,
+                color: header.includes("+") ? Colors.green : Colors.red,
               }}
             >
               {header}
@@ -41,11 +37,16 @@ export default function Card({ header }: Props) {
           </View>
           <View
             style={{
+              alignItems: "center",
+              justifyContent: "center",
               flex: 1,
-              // backgroundColor: "red",
             }}
           >
-            <Text></Text>
+            <View style={{ paddingBottom: 35 }}>
+              <Text
+                style={{ fontWeight: "bold", fontSize: 33 }}
+              >{`R$ ${value}`}</Text>
+            </View>
           </View>
         </Fragment>
       </TouchableHighlight>
@@ -56,6 +57,7 @@ export default function Card({ header }: Props) {
 const styles = StyleSheet.create({
   cardStyle: {
     height: 150,
+    alignItems: "center",
     marginHorizontal: Margins.marginHorizontal,
     backgroundColor: Colors.white,
     borderRadius: Borders.borderRadius,
